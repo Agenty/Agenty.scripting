@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agenty.scripting
+namespace AgentyScripting
 {
-    public class Class1
+    class AgentyException : Exception
     {
+        public AgentyException(string message) : base(message) { }
     }
 }
