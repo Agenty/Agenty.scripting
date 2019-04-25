@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace AgentyScripting
 {
-    class AgentyResult
+    class AgentyResponse
     {
-
+        public long? total { get; set; }
+        public int? limit { get; set; }
+        public int? offset { get; set; }
+        public int? returned { get; set; }
+        public List<dynamic> result { get; set; }
     }
 }

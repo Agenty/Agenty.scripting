@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,18 @@ namespace AgentyScriptingTest
         static void Main(string[] args)
         {
             // Set your api key
-            Agenty.ApiKey = "myapikey";
+            Agenty.ApiKey = "AGENTY_API_KEY";
 
             // Get agent result as DataTable
-            var table = Agenty.Cloud.GetAgentInput("abc");     
+            var table = Agenty.Cloud.GetAgentResult("<AGENT_ID>");
             
-            // Test your code
+            // Write your code here to test
+
+            // Print the table
+            table.Dump();
+
+            // Do not close the console
+            Console.Read();           
         }
     }
 }
