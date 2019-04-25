@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Agenty.scripting</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Agenty</authors>
+    <owners>Agenty</owners>
+    <iconUrl>https://cdn.agenty.com/icons/agenty-logo.png</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/Agenty/Agenty.scripting/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Agenty/Agenty.scripting</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A replication of Agenty .NET scripting library in C# to test and debug pre-processing and post-processing scripts locally</description>
+    <tags>Agenty, Web Scraping, Data Scraping, Scripting</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="[6,)"/>
+    </dependencies>
+  </metadata>
+</package>
