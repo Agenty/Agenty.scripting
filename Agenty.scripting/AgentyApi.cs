@@ -14,7 +14,7 @@ namespace AgentyScripting
         internal async Task<AgentyResponse> GetAgentResult(string agentId)
         {            
             var httpClient = DefaultHttpClient.CreateDefault();
-            var response = await httpClient.GetAsync($"results/{agentId}");
+            var response = await httpClient.GetAsync($"results/{agentId}?modified=0");
             if(response.IsSuccessStatusCode)
             {
                 var result = await response.Content.ReadAsAsync<AgentyResponse>();
