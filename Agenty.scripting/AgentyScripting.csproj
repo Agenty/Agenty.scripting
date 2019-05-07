@@ -22,7 +22,7 @@
     <PackageTags>Agenty, WebScraping, DataScraping, Scripting</PackageTags>
     <PackageReleaseNotes>First release</PackageReleaseNotes>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

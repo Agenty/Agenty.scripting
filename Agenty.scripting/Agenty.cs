@@ -52,6 +52,25 @@ namespace AgentyScripting
                 }
                 return null;
             }
+
+            public static DataTable GetList(int ListId)
+            {
+                if (string.IsNullOrEmpty(ApiKey))
+                {
+                    throw new AgentyException($"ApiKey is not set. Use the Agenty.ApiKey = [your api key] to set your api key first");
+                }
+                // Get the agent result from API
+                var api = new AgentyApi();
+                var response = api.GetListRows(ListId).Result;
+                if (response != null && response.result != null)
+                {
+                    // Convert to DataTable
+                    var json = JsonConvert.SerializeObject(response.result);
+                    DataTable table = (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
+                    return table;
+                }
+                return null;
+            }
         }
 
         public static void SetAgentResult(this DataTable table)

@@ -23,6 +23,18 @@ namespace AgentyScripting
             throw new AgentyException($"Request error. StatusCode : {response.StatusCode}, Message : {response.Content}");
         }
 
+        internal async Task<AgentyResponse> GetListRows(int listId)
+        {
+            var httpClient = DefaultHttpClient.CreateDefault();
+            var response = await httpClient.GetAsync($"lists/{listId}/rows");
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadAsAsync<AgentyResponse>();
+                return result;
+            }
+            throw new AgentyException($"Request error. StatusCode : {response.StatusCode}, Message : {response.Content}");
+        }
+
         internal async Task<AgentyResponse> GetAgentInput(string agentId)
         {
             var httpClient = DefaultHttpClient.CreateDefault();
