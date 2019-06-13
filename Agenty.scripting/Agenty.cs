@@ -34,7 +34,7 @@ namespace AgentyScripting
             //    return null;
             //}
 
-            public static DataTable GetAgentResult(string agentId, int? Version = null, int Collection = 1, bool Modified = false)
+            public static DataTable GetAgentResult(string agentId, int? Version = null, int Collection = 1, int Modified = 0)
             {
                 if (string.IsNullOrEmpty(ApiKey))
                 {
@@ -42,7 +42,7 @@ namespace AgentyScripting
                 }
                 // Get the agent result from API
                 var api = new AgentyApi();
-                var response = api.GetAgentResult(agentId).Result;
+                var response = api.GetAgentResult(agentId, Collection, Modified).Result;
                 if(response != null && response.result != null)
                 {
                     // Convert to DataTable

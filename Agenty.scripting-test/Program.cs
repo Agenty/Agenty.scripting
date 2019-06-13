@@ -17,14 +17,14 @@ namespace AgentyScriptingTest
 
             // Get agent result as DataTable
             var table = Agenty.Cloud.GetAgentResult("<AGENT_ID>");
-            
+
             // Write your code here to test
 
             // Print the table
             table.Dump();
 
             // Do not close the console
-            Console.Read();           
+            Console.Read();
         }
     }
 }

@@ -11,10 +11,10 @@ namespace AgentyScripting
 {
     class AgentyApi
     {
-        internal async Task<AgentyResponse> GetAgentResult(string agentId)
+        internal async Task<AgentyResponse> GetAgentResult(string agentId, int collection, int modified)
         {            
             var httpClient = DefaultHttpClient.CreateDefault();
-            var response = await httpClient.GetAsync($"results/{agentId}?modified=0");
+            var response = await httpClient.GetAsync($"results/{agentId}?collection={collection}&modified={modified}");
             if(response.IsSuccessStatusCode)
             {
                 var result = await response.Content.ReadAsAsync<AgentyResponse>();
